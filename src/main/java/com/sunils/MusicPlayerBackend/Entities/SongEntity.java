@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "Songs")
 public class SongEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private String name;
     private String interpret;
     private String filePath;
