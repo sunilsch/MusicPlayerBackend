@@ -6,7 +6,6 @@ import com.sunils.MusicPlayerBackend.Services.FilesStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -60,16 +59,11 @@ public class SongController {
     @PostMapping("/upload")
     @Transactional
     public String upload(@RequestParam String songName, @RequestParam String songInterpret, @RequestBody MultipartFile file){
-        if(!file.getOriginalFilename().endsWith(".wav")){
-            return "Wrong File format!";
-        }
+        if(!file.getOriginalFilename().endsWith(".wav")) return "Wrong File format!";
         SongEntity songEntity = new SongEntity();
         Integer id = songRepository.getHighestId();
-        if(id == null){
-            id = 0;
-        } else {
-            id++;
-        }
+        if(id == null) id = 0;
+        else id++;
         songEntity.setId(id);
         songEntity.setInterpret(songInterpret);
         songEntity.setName(songName);
