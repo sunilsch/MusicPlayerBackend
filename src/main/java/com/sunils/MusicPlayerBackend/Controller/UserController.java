@@ -2,6 +2,7 @@ package com.sunils.MusicPlayerBackend.Controller;
 
 import com.sunils.MusicPlayerBackend.Entities.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
