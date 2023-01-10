@@ -19,7 +19,6 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.security.web.util.matcher.NegatedRequestMatcher;
 
 import java.io.IOException;
 
@@ -46,8 +45,8 @@ public class OwnWebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(new AntPathRequestMatcher("/users/newUser")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/login")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/musik/all")).hasAnyRole("USER","ADMIN")
-                        .requestMatchers(new AntPathRequestMatcher("/musik/edit")).hasRole("ADMIN")
+                        .requestMatchers(new AntPathRequestMatcher("/musik/deleteSongById")).hasRole("ADMIN")
+                        .requestMatchers(new AntPathRequestMatcher("/musik/upload")).hasRole("ADMIN")
                         .requestMatchers(new AntPathRequestMatcher("/users/user/**")).hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
