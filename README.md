@@ -1,4 +1,4 @@
-# Music Player Backend
+# Music Player Backend -> Note: version on server not latest
 ## General
 This Backend application written with Java and Spring, works in Combination with my Music Player
 
