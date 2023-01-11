@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Songs")
 public class SongEntity {
-    @Id
     private String name;
     private String interpret;
     private String filePath;
+    @Id
     private Integer id;
 
 
