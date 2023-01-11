@@ -1,5 +1,6 @@
 package com.sunils.MusicPlayerBackend.Services;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.UrlResource;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.core.PreparedStatementSetter;
@@ -22,6 +23,7 @@ public class FilesStorageServiceImpl implements FilesStorageService{
         return root.toAbsolutePath().toString();
     }
 
+    @Bean
     @Override
     public void init() {
         try {
